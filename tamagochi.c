@@ -33,3 +33,31 @@ void jugar(void) {
       break;
   }
 }
+
+
+}
+
+void comer(void) {
+  int opcion;
+
+  printf("¿Qué quieres comer?\n");
+  printf("(1)Fruta\n");
+  printf("(2)Comida rápida\n");
+  printf("(3)No comer\n");
+  scanf("%d", &opcion);
+
+  switch (opcion) {
+    case 1:
+      hambre -= 20;
+      energia += 10;
+      break;
+    case 2:
+      hambre -= 10;
+      break;
+    case 3:
+      break;
+    default:
+      printf("Opción no válida.\n");
+      break;
+  }
+}
