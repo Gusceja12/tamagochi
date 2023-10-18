@@ -62,7 +62,7 @@ void comer(void) {
   }
 }
 
-oid dormir(void) {
+void dormir(void) {
   int opcion;
 
   printf("¿Cuánto quieres dormir?\n");
