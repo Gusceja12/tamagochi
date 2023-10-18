@@ -61,3 +61,27 @@ void comer(void) {
       break;
   }
 }
+
+oid dormir(void) {
+  int opcion;
+
+  printf("¿Cuánto quieres dormir?\n");
+  printf("(1)Siesta\n");
+  printf("(2)Toda la noche\n");
+  printf("(3)No dormir\n");
+  scanf("%d", &opcion);
+
+  switch (opcion) {
+    case 1:
+      energia += 30;
+      break;
+    case 2:
+      energia += 50;
+      break;
+    case 3:
+      break;
+    default:
+      printf("Opción no válida.\n");
+      break;
+  }
+}
