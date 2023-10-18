@@ -35,7 +35,7 @@ void jugar(void) {
 }
 
 
-}
+
 
 void comer(void) {
   int opcion;
@@ -84,4 +84,65 @@ void dormir(void) {
       printf("Opción no válida.\n");
       break;
   }
+}
+
+void ver_estado(void) {
+  printf("Energía: %d\n", energia);
+  printf("Hambre: %d\n", hambre);
+}
+
+// Programa principal
+int main(void) {
+  int opcion;
+
+  // Solicitamos el nombre del Tamagochi
+  printf("¿Cómo quieres llamar a tu Tamagochi?\n");
+  scanf("%s", nombre);
+
+  // Bucle principal
+  while (1) {
+    // Imprimimos el menú
+    printf("** Menú **\n");
+    printf("(1)Jugar\n");
+    printf("(2)Comer\n");
+    printf("(3)Dormir\n");
+    printf("(4)Ver estado\n");
+    printf("(5)Salir\n");
+    scanf("%d", &opcion);
+
+    // Procesamos la opción seleccionada
+    switch (opcion) {
+      case 1:
+        jugar();
+        break;
+      case 2:
+        comer();
+        break;
+      case 3:
+        dormir();
+        break;
+      case 4:
+        ver_estado();
+        break;
+      case 5:
+        printf("¡Adiós, %s!\n", nombre);
+        return 0;
+      default:
+        printf("Opción no válida.\n");
+        break;
+    }
+
+    // Actualizamos el estado del Tamagochi
+    energia -= 5;
+    hambre -= 5;
+
+    // Si el Tamagochi muere, terminamos el programa
+    if (energia <= 0 || hambre <= 0) {
+      printf("¡Tu Tamagochi ha muerto!\n");
+      return 0;
+    }
+  }
+
+  return 0;
+}
 }
