@@ -1,5 +1,5 @@
 # include <stdio.h>
-int main () {
+
 // Constantes
 const int MAX_ENERGIA = 100;
 const int MAX_HAMBRE = 100;
@@ -145,4 +145,4 @@ int main(void) {
 
   return 0;
 }
-}
+
