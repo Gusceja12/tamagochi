@@ -1,2 +1,35 @@
 # include <stdio.h>
-int main ()
+int main () {
+// Constantes
+const int MAX_ENERGIA = 100;
+const int MAX_HAMBRE = 100;
+
+// Variables
+int energia = 50;
+int hambre = 50;
+char nombre[20];
+
+// Funciones
+void jugar(void) {
+  int opcion;
+
+  printf("¿Qué quieres hacer?\n");
+  printf("(1)Jugar al parque\n");
+  printf("(2)Jugar con un juguete\n");
+  printf("(3)No jugar\n");
+  scanf("%d", &opcion);
+
+  switch (opcion) {
+    case 1:
+      energia += 20;
+      break;
+    case 2:
+      energia += 10;
+      break;
+    case 3:
+      break;
+    default:
+      printf("Opción no válida.\n");
+      break;
+  }
+}
